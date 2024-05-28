@@ -13,6 +13,7 @@ function TodoList() {
   });
   const [input, setInput] = useState('');
   const [filter, setFilter] = useState('all');
+  const [sortType, setSortType] = useState('asc');
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -48,7 +49,20 @@ function TodoList() {
     }
   });
 
-  const sortedTasks = [...filterTasks].sort((a, b) => a.text.localeCompare(b.text));
+  const sortTasks = (type) => {
+    const sortedTasks = [...tasks].sort((a, b) => {
+      const textA = a.text.toLowerCase();
+      const textB = b.text.toLowerCase();
+      if (type === 'asc') {
+        return textA.localeCompare(textB);
+      } else {
+        return textB.localeCompare(textA);
+      }
+    });
+    setTasks(sortedTasks);
+    setSortType(type);
+  };
+
   return (
     <div className='todo-container'>
       <h1>Todo List</h1>
@@ -64,12 +78,17 @@ function TodoList() {
           <option value="completed">Completed</option>
           <option value="incompleted">Incomplete</option>
         </select>
+        <select value={sortType} onChange={(e) => sortTasks(e.target.value)}>
+          <option value="none">None</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Decending</option>
+        </select>
       </div>
-      {sortedTasks.map((task, index) => (
+      {filterTasks.map((task, index) => (
         <div key={index} className='tasks'>
-          <span>{task.text}{task.completed ? <HiBadgeCheck style={{color:'green',fontSize:'20px'}}/>:' '}</span>
+          <span>{task.text}{task.completed ? <HiBadgeCheck style={{ color: 'green', fontSize: '20px' }} /> : ' '}</span>
           <div className='icons'>
-            <button onClick={() => toggleTask(index)}>{task.completed ? 'Unmark' : 'Complete'}</button>
+            <button onClick={() => toggleTask(index)}>{task.completed ? 'Incomplete' : 'Complete'}</button>
             <button onClick={() => removeTask(index)}>Remove</button>
           </div>
         </div>

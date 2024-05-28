@@ -126,6 +126,23 @@ h1{
     font-weight: 500;
 }
 
+.icons button:hover{
+    background-color: #cb7e94;
+    color: #1a1717e3;
+}
+
+.sort{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(36, 55, 55, 0.789);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 20rem;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
     .todo-container {
         flex-direction: column;
