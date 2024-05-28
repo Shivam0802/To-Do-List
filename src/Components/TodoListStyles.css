@@ -1,0 +1,198 @@
+.todo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 5rem;
+    gap: 0.5rem;
+}
+
+h1{
+    color: #f0f0f0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.todo-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #212525e3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+
+.todo-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 0.3rem;
+    border-radius: 0.60rem;
+}
+
+.todo-form input{
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #212525e3;
+    background-color: #f0f0f0;
+    font-weight: 500;
+}
+
+.todo-form input:focus{
+    outline: none;
+}
+
+.todo-form button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #e9e9e9;
+    background-color: #202325d2;
+    font-weight: 500;
+}
+
+.todo-form button:hover{
+    background-color: #e87474;
+    color: #212525e3;
+}
+
+.todo-container select{
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #212525e3;
+    background-color: #f0f0f0;
+    font-weight: 500;
+}
+
+.todo-container select:focus{
+    outline: none;
+}
+
+.tasks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+    color: #212525e3;
+    background-color: #f0f0f0;
+    width: 30rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+
+.tasks span{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons button{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #e9e9e9;
+    background-color: #202325d2;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .todo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .todo-form input {
+        margin-bottom: 10px;
+    }
+
+    .todo-form button {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .tasks{
+        width: 20rem;
+    }
+
+    .tasks span{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .todo-container {
+        flex-direction: column;
+    }
+
+    .todo-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .todo-form input {
+        margin-bottom: 10px;
+    }
+
+    .todo-form button {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .tasks{
+        width: 20rem;
+    }
+}
