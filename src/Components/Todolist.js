@@ -63,6 +63,14 @@ function TodoList() {
     setSortType(type);
   };
 
+  const handleValidation = () => {
+    if (input.trim() === '') {
+      alert('Task cannot be empty');
+      return false;
+    }
+    return true;
+  };
+
   return (
     <div className='todo-container'>
       <h1>Todo List</h1>
@@ -70,7 +78,7 @@ function TodoList() {
         <form onSubmit={addTask}>
           <div className='todo-form'>
             <input value={input} onChange={(e) => setInput(e.target.value)} placeholder='Add your task here ......' />
-            <button type="submit">Add Task</button>
+            <button type="submit" onClick={handleValidation}>Add Task</button>
           </div>
         </form>
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
